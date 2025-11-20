@@ -7,15 +7,18 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
+
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity(name = "UserSkill")
-public class UserSkill {
+public class UserSkill extends BaseModel{
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private int id;
-
+    @ManyToOne
+    @JoinColumn(name = "id_user")
+    private User user;
     @ManyToOne
     @JoinColumn(name = "id_skill")
     private Skill skill;
