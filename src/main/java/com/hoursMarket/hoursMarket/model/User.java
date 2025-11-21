@@ -8,11 +8,15 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
+@Setter
 @Entity(name = "User")
 public class User extends BaseModel{
 
@@ -30,7 +34,16 @@ public class User extends BaseModel{
     private Profile profile;
 
     @OneToMany(mappedBy = "user")
-    private List<UserSkill> userskill;
+    private List<UserSkill> userskills;
+
+    @OneToMany(mappedBy = "user")
+    private List<TimeSlot> timeSlots;
+
+    @OneToMany(mappedBy = "user")
+    private List<Offer> offers;
+
+    @OneToMany(mappedBy = "user")
+    private List<Request> requests;
 
     
 }

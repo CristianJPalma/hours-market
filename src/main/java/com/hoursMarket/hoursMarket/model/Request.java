@@ -1,0 +1,43 @@
+package com.hoursMarket.hoursMarket.model;
+
+import java.util.List;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@Entity(name = "request")
+public class Request extends BaseModel{
+
+    @ManyToOne
+    @JoinColumn(name = "id_user")
+    private User user;
+
+    @ManyToOne
+    @JoinColumn(name = "id_location")
+    private Location location;
+
+    @Column(name = "title")
+    private String title;
+
+    @Column(name = "description")
+    private String description;
+
+    @Column(name = "hours_request")
+    private byte hours_request;
+
+
+    @OneToMany(mappedBy = "request")
+    private List<Matchs> matchs;
+}
