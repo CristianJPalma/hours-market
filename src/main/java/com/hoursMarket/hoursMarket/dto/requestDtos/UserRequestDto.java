@@ -5,13 +5,15 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Getter
 @Setter
-@NoArgsConstructor
+@Getter
 @AllArgsConstructor
-public class UserRequestDto {
+@NoArgsConstructor
+public class UserRequestDto extends BaseRequestDto{
+
     private String email;
     private String password;
     private byte status;
+    
 }
 

@@ -1,14 +1,18 @@
 package com.hoursMarket.hoursMarket.dto.requestDtos;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class LocationRequestDto extends BaseRequestDto{
 
-    public String type;
+    private String type;
 
-    public String neighborhood_name;
+    private String neighborhood_name;
     
 }

@@ -13,14 +13,21 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 
-@NoArgsConstructor
-@AllArgsConstructor
-@Getter
 @Setter
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity(name = "User")
 public class User extends BaseModel{
 
 
+    public User(String email, String password, byte status){
+        this.email = email;
+        this.password = password;
+        this.status = status;
+    }
+
+    
     @Column(name = "email", nullable = false, length = 30)
     private String email;
 
@@ -29,6 +36,9 @@ public class User extends BaseModel{
 
     @Column(name = "status", nullable = false)
     private byte status;
+
+
+
 
     @OneToOne(mappedBy = "user")
     private Profile profile;

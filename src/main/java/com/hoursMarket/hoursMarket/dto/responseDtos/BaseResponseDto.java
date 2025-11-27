@@ -7,5 +7,5 @@ import lombok.Setter;
 @Setter
 public abstract class BaseResponseDto {
 
-	public int id;
+	private	int id;
 }

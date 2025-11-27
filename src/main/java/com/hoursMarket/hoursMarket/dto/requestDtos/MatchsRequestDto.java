@@ -1,17 +1,21 @@
 package com.hoursMarket.hoursMarket.dto.requestDtos;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class MatchsRequestDto extends BaseRequestDto{
 
-	public int id_offer;
+	private int id_offer;
 	
-	public int id_request;
+	private int id_request;
 	
-	public int id_time_slot;
+	private int id_time_slot;
 	
-	public int reserved_hours;
+	private int reserved_hours;
 }

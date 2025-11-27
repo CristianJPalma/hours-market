@@ -10,9 +10,7 @@ import com.hoursMarket.hoursMarket.repository.IUserRepository;
 import com.hoursMarket.hoursMarket.service.interfaces.IUserService;
 
 @Service
-public class UserService
-		extends BaseService<User, UserRequestDto, UserResponseDto, Integer>
-			implements IUserService{
+public class UserService extends BaseService<User, UserRequestDto, UserResponseDto, Integer> implements IUserService{
 
 	@Autowired
 	private IUserRepository repo;
@@ -24,10 +22,15 @@ public class UserService
 				dRequest.getPassword(),
 				dRequest.getStatus()
 				);
-	} 
+	}
 	
 	@Override
 	public UserResponseDto modelToDto(User user) {
-		return new UserResponseDto();
+		return new UserResponseDto(
+			//user.getId(),
+			user.getEmail(),
+			user.getPassword(),
+			user.getStatus()
+		);
 	}
 }

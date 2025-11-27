@@ -1,15 +1,19 @@
 package com.hoursMarket.hoursMarket.dto.responseDtos;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Getter
 @Setter
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
 public class UserResponseDto extends BaseResponseDto{
 
-	public String email;
+	private String email;
 	
-	public String password;
+	private String password;
 	
-	public byte status;
+	private byte status;
 }
