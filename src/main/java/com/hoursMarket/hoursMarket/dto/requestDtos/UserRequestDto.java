@@ -1,16 +1,17 @@
 package com.hoursMarket.hoursMarket.dto.requestDtos;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class UserRequestDto {
-
-	public String email;
-	
-	public String password;
-	
-	public byte status;
-	
+    private String email;
+    private String password;
+    private byte status;
 }
+
