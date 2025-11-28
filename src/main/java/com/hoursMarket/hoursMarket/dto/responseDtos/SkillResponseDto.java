@@ -9,14 +9,14 @@ import lombok.experimental.SuperBuilder;
 @Setter
 @Getter
 @SuperBuilder
-public class UserResponseDto extends BaseResponseDto{
+public class SkillResponseDto extends BaseResponseDto{
 
-	@JsonView(Views.Public.class)
-	private String email;
-	
-	@JsonView(Views.Internal.class)
-	private String password;
-	
-	@JsonView(Views.Public.class)
-	private byte status;
+    @JsonView(Views.Public.class)
+    private String name;
+
+    @JsonView(Views.Public.class)
+    private String category;
+
+    @JsonView(Views.Public.class)
+    private int status;
 }

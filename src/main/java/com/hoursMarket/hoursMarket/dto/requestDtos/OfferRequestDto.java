@@ -2,6 +2,7 @@ package com.hoursMarket.hoursMarket.dto.requestDtos;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,9 +16,11 @@ import lombok.Setter;
 public class OfferRequestDto extends BaseRequestDto{
 
     @NotNull(message = "El id del usuario no puede ser nulo")
+    @Positive(message = "El id del usuario debe ser positivo")
     private Integer idUser;
 
     @NotNull(message = "El id de la ubicación no puede ser nulo")
+    @Positive(message = "El id de la ubicación debe ser positivo")
     private Integer idLocation;
 
     @NotBlank(message = "El título no puede estar vacío")
@@ -29,5 +32,6 @@ public class OfferRequestDto extends BaseRequestDto{
     private String description;
 
     @NotNull(message = "Las horas máximas no pueden ser nulas")
+    @Positive(message = "Las horas máximas deben ser positivas")
     private Byte maxHours;
 }

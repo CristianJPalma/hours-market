@@ -11,22 +11,23 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.experimental.SuperBuilder;
 
 
 @Setter
 @Getter
 @AllArgsConstructor
-//@NoArgsConstructor
+@NoArgsConstructor
+@SuperBuilder
 @Entity(name = "User")
 public class User extends BaseModel{
 
 
-    public User(String email, String password, byte status){
-        this.email = email;
-        this.password = password;
-        this.status = status;
-    }
-    public User() {};
+    // public User(String email, String password, byte status){
+    //     this.email = email;
+    //     this.password = password;
+    //     this.status = status;
+    // }
     @Column(name = "email", nullable = false, length = 30)
     private String email;
 

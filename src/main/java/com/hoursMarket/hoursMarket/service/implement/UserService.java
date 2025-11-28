@@ -17,20 +17,21 @@ public class UserService extends BaseService<User, UserRequestDto, UserResponseD
 	
 	@Override
 	public User dtoToModel(UserRequestDto dRequest) {
-		return new User(
-				dRequest.getEmail(),
-				dRequest.getPassword(),
-				dRequest.getStatus()
-				);
+		return User.builder()
+            .email(dRequest.getEmail())
+            .password(dRequest.getPassword())
+            .status(dRequest.getStatus())
+            .build();
+
 	}
 	
 	@Override
 	public UserResponseDto modelToDto(User user) {
-		return new UserResponseDto(
-			//user.getId(),
-			user.getEmail(),
-			user.getPassword(),
-			user.getStatus()
-		);
+		return UserResponseDto.builder()
+			.id(user.getId())
+            .email(user.getEmail())
+            .password(user.getPassword())
+            .status(user.getStatus())
+            .build();
 	}
 }

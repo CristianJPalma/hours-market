@@ -6,17 +6,20 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
-@Setter
 @Getter
+@Setter
 @SuperBuilder
-public class UserResponseDto extends BaseResponseDto{
+public class MatchsResponseDto extends BaseResponseDto{
 
 	@JsonView(Views.Public.class)
-	private String email;
-	
-	@JsonView(Views.Internal.class)
-	private String password;
+	private int id_offer;
 	
 	@JsonView(Views.Public.class)
-	private byte status;
+	private int id_request;
+	
+	@JsonView(Views.Internal.class)
+	private int id_time_slot;
+	
+	@JsonView(Views.Public.class)
+	private int reserved_hours;
 }
