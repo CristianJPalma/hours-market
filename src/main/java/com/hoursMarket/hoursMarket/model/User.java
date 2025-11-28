@@ -16,7 +16,7 @@ import lombok.Setter;
 @Setter
 @Getter
 @AllArgsConstructor
-@NoArgsConstructor
+//@NoArgsConstructor
 @Entity(name = "User")
 public class User extends BaseModel{
 
@@ -26,8 +26,7 @@ public class User extends BaseModel{
         this.password = password;
         this.status = status;
     }
-
-    
+    public User() {};
     @Column(name = "email", nullable = false, length = 30)
     private String email;
 

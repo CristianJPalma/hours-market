@@ -28,13 +28,13 @@ public class Request extends BaseModel{
     @JoinColumn(name = "id_location")
     private Location location;
 
-    @Column(name = "title")
+    @Column(name = "title", nullable = false, length = 100)
     private String title;
 
-    @Column(name = "description")
+    @Column(name = "description", nullable = false, length = 500)
     private String description;
 
-    @Column(name = "hours_request")
+    @Column(name = "hours_request", nullable = false)
     private byte hours_request;
 
 

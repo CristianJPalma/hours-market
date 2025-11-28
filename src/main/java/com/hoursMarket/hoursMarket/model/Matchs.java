@@ -25,10 +25,10 @@ public class Matchs extends BaseModel{
     @JoinColumn(name = "id_request")
     private Request request;
 
-    @Column(name = "id_time_slot")
+    @Column(name = "id_time_slot", nullable = false)
     private int id_time_slot;
 
-    @Column(name = "reserved_hours")
+    @Column(name = "reserved_hours", nullable = false)
     private int reserved_hours;
 
     @OneToOne(mappedBy = "matchs")

@@ -19,10 +19,10 @@ import lombok.Setter;
 public class Location extends BaseModel{
 
     
-    @Column(name = "type")
+    @Column(name = "type", nullable = false, length = 50)
     private String type;
 
-    @Column(name = "neighborhood_name")
+    @Column(name = "neighborhood_name", nullable = false, length = 100)
     private String neighborhood_name;
     
     @OneToMany(mappedBy = "location")

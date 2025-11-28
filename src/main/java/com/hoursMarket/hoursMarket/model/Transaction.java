@@ -22,15 +22,15 @@ public class Transaction extends BaseModel{
     @JoinColumn(name = "id_match")
     private Matchs matchs;
 
-    @Column(name = "id_from_user")
+    @Column(name = "id_from_user", nullable = false)
     private int id_from_user;
 
-    @Column(name = "id_to_user")
+    @Column(name = "id_to_user", nullable = false)
     private int id_to_user;
 
-    @Column(name = "hours")
+    @Column(name = "hours", nullable = false)
     private int hours;
 
-    @Column(name = "date")
+    @Column(name = "date", nullable = false)
     private LocalDate date;
 }

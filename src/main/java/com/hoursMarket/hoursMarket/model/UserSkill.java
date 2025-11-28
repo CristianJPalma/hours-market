@@ -25,9 +25,9 @@ public class UserSkill extends BaseModel{
     @JoinColumn(name = "id_skill")
     private Skill skill;
 
-    @Column(name = "level")
+    @Column(name = "level", nullable = false)
     private byte level;
 
-    @Column(name = "priority")
+    @Column(name = "priority", nullable = false)
     private byte priority;
 }

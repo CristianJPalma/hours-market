@@ -27,13 +27,13 @@ public class Offer extends BaseModel{
     @JoinColumn(name = "id_location")
     private Location location;
 
-    @Column(name = "title")
+    @Column(name = "title", nullable = false, length = 100)
     private String title;
 
-    @Column(name = "description")
+    @Column(name = "description", nullable = false, length = 500)
     private String description;
 
-    @Column(name = "max_hours")
+    @Column(name = "max_hours", nullable = false)
     private byte max_hours;
 
     @OneToMany(mappedBy = "offer")

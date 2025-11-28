@@ -22,9 +22,9 @@ public class TimeSlot extends BaseModel{
     @JoinColumn(name = "id_user")
     private User user;
 
-    @Column(name = "start")
+    @Column(name = "start", nullable = false)
     private Timestamp start;
 
-    @Column(name = "end")
+    @Column(name = "end", nullable = false)
     private Timestamp end;
 }
